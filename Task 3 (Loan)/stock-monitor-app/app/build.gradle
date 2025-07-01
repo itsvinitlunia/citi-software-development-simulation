@@ -1,0 +1,59 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Yahoo Finance API dependency
+    implementation group: 'com.yahoofinance-api', name: 'YahooFinanceAPI', version: '3.17.0'
+    
+    // SLF4J simple logger to fix the warning
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
+    
+    // Test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+}
+
+javafx {
+    version = "21.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+    mainClass = 'org.example.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+def osName = System.getProperty('os.name').toLowerCase()
+def platform = ''
+if (osName.contains('win')) {
+    platform = 'win'
+} else if (osName.contains('mac')) {
+    platform = 'mac'
+} else if (osName.contains('nux')) {
+    platform = 'linux'
+}
+
+run {
+    doFirst {
+        jvmArgs = [
+            "--module-path", configurations.runtimeClasspath.asPath,
+            "--add-modules", "javafx.controls,javafx.fxml"
+        ]
+    }
+}
+
+// Ensure JavaFX modules are available at compile time
+compileJava {
+    options.compilerArgs += [
+        "--module-path", classpath.asPath,
+        "--add-modules", "javafx.controls,javafx.fxml"
+    ]
+}
