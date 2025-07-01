@@ -35,8 +35,7 @@ This repository contains my submission for the **Citi Technology Software Develo
 ### ✅ Task 4: Visualize Live Data (📌 *Optional Folder*)
 - **Goal**: Build a dashboard to plot stock data visually.
 - **Skills**: Data Visualization, Java GUI, Real-time Display
-
-> ⚠️ *If this task was completed, add a folder like `Task 4 (Stock Dashboard)` and include it.*
+- 📂 [`Task 3 (Loan)`](./Task%203%20(Loan)/)
 
 ---
 
@@ -64,4 +63,23 @@ This repository contains my submission for the **Citi Technology Software Develo
 ---
 
 ## 📂 Repository Structure
+CITI_SoftwareDev/
+├── Task 1 (Loan Management State Diagram)/
+├── Task 2 (Feature proposal)/
+├── Task 3 (Loan)/ # Stock market fetch using Java
+├── .gitignore
+└── README.md
+
+
+---
+
+## 📫 Connect with Me
+
+- 🌐 [LinkedIn](https://www.linkedin.com/in/vinitlunia)
+- 💻 [GitHub](https://github.com/itsvinitlunia)
+
+---
+
+> 📜 **Disclaimer**: This is a personal learning project and is not affiliated with or endorsed by Citi. This job simulation does not constitute employment or internship experience.
+
 
